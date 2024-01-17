@@ -11,18 +11,18 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 export class ExcluirPensamentoComponent {
 
+  constructor(
+    private service: PensamentoService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
+
   pensamento: Pensamento = {
     id: 0,
     conteudo: '',
     autoria: '',
     modelo: ''
   }
-
-  constructor(
-    private service: PensamentoService,
-    private router: Router,
-    private route: ActivatedRoute
-  ) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id')
